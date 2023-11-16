@@ -28,7 +28,7 @@ class Command(BaseCommand):
         print("Starting import of states...")
         with open('base/fixtures/states.csv', mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
-            country_mapping = {country.id: country for country in Country.objects.all()}
+            country_mapping = {country.id: country for country in Country.objects.actives()}
             states = []
             for row in reader:
                 country = country_mapping.get(int(row['country_id']))
@@ -42,7 +42,7 @@ class Command(BaseCommand):
         print("Starting import of cities...")
         with open('base/fixtures/cities.csv', mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
-            state_mapping = {state.id: state for state in State.objects.all()}
+            state_mapping = {state.id: state for state in State.objects.actives()}
             cities = []
             for row in reader:
                 state = state_mapping.get(int(row['state_id']))
