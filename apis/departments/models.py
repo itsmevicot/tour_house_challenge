@@ -7,10 +7,10 @@ class Department(BaseModel):
         max_length=100
     )
     cost_center = models.CharField(
-        max_length=100
+        max_length=50
     )
     integration_code = models.CharField(
-        max_length=100
+        max_length=10
     )
     company = models.ForeignKey(
         'companies.Company',

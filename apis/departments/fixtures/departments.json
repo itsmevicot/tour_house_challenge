@@ -1,0 +1,41 @@
+[
+    {
+        "model": "departments.department",
+        "pk": 1,
+        "fields": {
+            "name": "Development",
+            "cost_center": "CC001",
+            "integration_code": "IC001",
+            "company": 1,
+            "created_at": "2020-03-11T00:00:00+00:00",
+            "updated_at": "2021-09-07T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "departments.department",
+        "pk": 2,
+        "fields": {
+            "name": "Human Resources",
+            "cost_center": "CC002",
+            "integration_code": "IC002",
+            "company": 6,
+            "created_at": "2020-11-26T00:00:00+00:00",
+            "updated_at": "2021-02-10T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "departments.department",
+        "pk": 3,
+        "fields": {
+            "name": "Sales",
+            "cost_center": "CC003",
+            "integration_code": "IC003",
+            "company": 5,
+            "created_at": "2020-05-01T00:00:00+00:00",
+            "updated_at": "2021-02-20T00:00:00+00:00",
+            "is_active": true
+        }
+    }
+]

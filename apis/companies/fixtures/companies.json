@@ -1,0 +1,93 @@
+[
+    {
+        "model": "companies.company",
+        "pk": 1,
+        "fields": {
+            "name": "Tour House",
+            "cnpj": "12.345.678/0001-90",
+            "address": "Address 1",
+            "country": "Country 1",
+            "created_at": "2020-08-20T00:00:00+00:00",
+            "updated_at": "2021-04-02T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 2,
+        "fields": {
+            "name": "Top Tour",
+            "cnpj": "12.345.678/0002-90",
+            "address": "Address 2",
+            "country": "Country 2",
+            "created_at": "2020-07-25T00:00:00+00:00",
+            "updated_at": "2021-02-21T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 3,
+        "fields": {
+            "name": "Netflix",
+            "cnpj": "12.345.678/0003-90",
+            "address": "Address 3",
+            "country": "Country 3",
+            "created_at": "2020-11-25T00:00:00+00:00",
+            "updated_at": "2021-06-13T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 4,
+        "fields": {
+            "name": "Meta",
+            "cnpj": "12.345.678/0004-90",
+            "address": "Address 4",
+            "country": "Country 4",
+            "created_at": "2020-11-08T00:00:00+00:00",
+            "updated_at": "2021-01-17T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 5,
+        "fields": {
+            "name": "Google",
+            "cnpj": "12.345.678/0005-90",
+            "address": "Address 5",
+            "country": "Country 5",
+            "created_at": "2020-02-06T00:00:00+00:00",
+            "updated_at": "2021-09-23T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 6,
+        "fields": {
+            "name": "X",
+            "cnpj": "12.345.678/0006-90",
+            "address": "Address 6",
+            "country": "Country 6",
+            "created_at": "2020-10-04T00:00:00+00:00",
+            "updated_at": "2021-02-28T00:00:00+00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "companies.company",
+        "pk": 7,
+        "fields": {
+            "name": "CVC Turismo",
+            "cnpj": "12.345.678/0007-90",
+            "address": "Address 7",
+            "country": "Country 7",
+            "created_at": "2020-01-15T00:00:00+00:00",
+            "updated_at": "2021-05-17T00:00:00+00:00",
+            "is_active": true
+        }
+    }
+]

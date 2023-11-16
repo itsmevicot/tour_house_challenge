@@ -13,10 +13,8 @@ class Company(BaseModel):
     address = models.CharField(
         max_length=100
     )
-    city = models.ForeignKey(
-        'base.City',
-        on_delete=models.PROTECT,
-        related_name='companies'
+    country = models.CharField(
+        max_length=100
     )
 
     class Meta:

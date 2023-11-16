@@ -49,3 +49,5 @@ class Consultant(BaseModel):
 
     def __str__(self):
         return f"{self.user.email}"
+
+#TODO: Refletir sobre a necessidade da model Consultant
