@@ -61,8 +61,12 @@ A documentação gerada via [Swagger](https://swagger.io/) está disponível em:
 > http://localhost:8000
 
 ### Dados de teste
-É possível carregar dados de teste para alimentar o banco de dados com fixtures .json. Para isso, um comando que importa os dados de teste foi criado. Para executá-lo, utilize:
+É possível carregar dados de teste para alimentar o banco de dados através de fixtures. Para isso, um comando que importa esses dados foi criado. Para executá-lo, utilize:
 > python manage.py load_test_data
+
+Nessa importação, também é criado um superusuário com as seguintes credenciais:
+- email='admin@admin.com' 
+- password='admin'
 
 ## Funcionamento
 Como mencionado anteriormente, todos os endpoints estão documentados no Swagger. Para acessá-los, basta iniciar o projeto e acessar o link http://localhost:8000.
@@ -88,3 +92,25 @@ Para utilizar a API, é necessário realizar a autenticação. Siga os passos ab
 - Para gerar um novo token de acesso, utilize o endpoint 'api/v1/token/refresh/', passando o token 'refresh' no corpo da requisição.
 - Por fim, para utilizar o token na interface do Swagger, vá até o topo da página e localize o botão "Authorize".
 - Digite "Bearer `token de acesso`" no campo de texto e clique em "Authorize". Pronto! Você está autenticado e pode utilizar a API.
+
+
+## Testes
+
+Foram realizados testes unitários para cada API. Foram feitos testes de: criação, listagem, atualização, atualização parcial, remoção e recuperação por id de cada entidade.
+
+Para executar os testes, utilize o comando:
+> python manage.py test
+
+Se preferir executar os testes de forma individual:
+> python manage.py test [nome do diretório]/[nome do app]
+
+Exemplo:
+> python manage.py test apis/employees
+
+
+## API Collection
+
+Dentro da pasta [api_collection](api_collection), há 3 arquivos criados originalmente com o Insomnia, que podem ser importados para testar a API. Estão disponíveis nos formatos:
+- JSON
+- YAML
+- HAR (HTTP Archive)
