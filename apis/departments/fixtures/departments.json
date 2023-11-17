@@ -3,7 +3,7 @@
         "model": "departments.department",
         "pk": 1,
         "fields": {
-            "name": "Development",
+            "name": "Desenvolvimento",
             "cost_center": "CC001",
             "integration_code": "IC001",
             "company": 1,
@@ -16,7 +16,7 @@
         "model": "departments.department",
         "pk": 2,
         "fields": {
-            "name": "Human Resources",
+            "name": "Recursos Humanos",
             "cost_center": "CC002",
             "integration_code": "IC002",
             "company": 6,
@@ -29,7 +29,7 @@
         "model": "departments.department",
         "pk": 3,
         "fields": {
-            "name": "Sales",
+            "name": "Vendas",
             "cost_center": "CC003",
             "integration_code": "IC003",
             "company": 5,

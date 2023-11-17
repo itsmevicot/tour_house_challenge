@@ -4,9 +4,9 @@
         "pk": 1,
         "fields": {
             "name": "Tour House",
-            "cnpj": "12.345.678/0001-90",
-            "address": "Address 1",
-            "country": "Country 1",
+            "cnpj": "60.795.926/0001-42",
+            "address": "Rua Coronel Lucas",
+            "country": "Brasil",
             "created_at": "2020-08-20T00:00:00+00:00",
             "updated_at": "2021-04-02T00:00:00+00:00",
             "is_active": true
@@ -17,9 +17,9 @@
         "pk": 2,
         "fields": {
             "name": "Top Tour",
-            "cnpj": "12.345.678/0002-90",
-            "address": "Address 2",
-            "country": "Country 2",
+            "cnpj": "57.000.836/0001-03",
+            "address": "Travessa Jardim Tropical",
+            "country": "Brasil",
             "created_at": "2020-07-25T00:00:00+00:00",
             "updated_at": "2021-02-21T00:00:00+00:00",
             "is_active": true
@@ -30,9 +30,9 @@
         "pk": 3,
         "fields": {
             "name": "Netflix",
-            "cnpj": "12.345.678/0003-90",
-            "address": "Address 3",
-            "country": "Country 3",
+            "cnpj": "07.082.046/0001-46",
+            "address": "Rua São Francisco",
+            "country": "Brasil",
             "created_at": "2020-11-25T00:00:00+00:00",
             "updated_at": "2021-06-13T00:00:00+00:00",
             "is_active": true
@@ -43,9 +43,9 @@
         "pk": 4,
         "fields": {
             "name": "Meta",
-            "cnpj": "12.345.678/0004-90",
-            "address": "Address 4",
-            "country": "Country 4",
+            "cnpj": "04.183.362/0001-16",
+            "address": "Rua Gaspar Silveira Martins",
+            "country": "Portugal",
             "created_at": "2020-11-08T00:00:00+00:00",
             "updated_at": "2021-01-17T00:00:00+00:00",
             "is_active": true
@@ -56,9 +56,9 @@
         "pk": 5,
         "fields": {
             "name": "Google",
-            "cnpj": "12.345.678/0005-90",
-            "address": "Address 5",
-            "country": "Country 5",
+            "cnpj": "46.118.443/0001-82",
+            "address": "Church Street",
+            "country": "Estados Unidos",
             "created_at": "2020-02-06T00:00:00+00:00",
             "updated_at": "2021-09-23T00:00:00+00:00",
             "is_active": true
@@ -69,9 +69,9 @@
         "pk": 6,
         "fields": {
             "name": "X",
-            "cnpj": "12.345.678/0006-90",
-            "address": "Address 6",
-            "country": "Country 6",
+            "cnpj": "87.055.574/0001-45",
+            "address": "International Drive",
+            "country": "Estados Unidos",
             "created_at": "2020-10-04T00:00:00+00:00",
             "updated_at": "2021-02-28T00:00:00+00:00",
             "is_active": true
@@ -82,9 +82,9 @@
         "pk": 7,
         "fields": {
             "name": "CVC Turismo",
-            "cnpj": "12.345.678/0007-90",
-            "address": "Address 7",
-            "country": "Country 7",
+            "cnpj": "67.046.993/0001-03",
+            "address": "North Orange Avenue",
+            "country": "Estados Unidos",
             "created_at": "2020-01-15T00:00:00+00:00",
             "updated_at": "2021-05-17T00:00:00+00:00",
             "is_active": true
