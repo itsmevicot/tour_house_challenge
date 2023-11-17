@@ -30,7 +30,7 @@ Este projeto foi desenvolvido para o desafio técnico da Tour House. Ele visa ge
 
 * Nessa etapa, vá até a [raiz do projeto Django](tourhouse) e localize o arquivo [local_settings_sample.py](tourhouse/local_settings_sample.py). Utilize-o como base para configurar seu banco PostgreSQL.
 * Crie um arquivo local_settings.py seguindo o exemplo. Você pode passar a SECRET_KEY do projeto tanto no arquivo local_settings.py quanto nas variáveis de ambiente.
-* Similarmente, você pode configurar as variáveis de ambiente do projeto seguindo o [arquivo de exemplo para variáveis de ambiente](.env_exemplo)
+* Similarmente, você pode configurar as variáveis de ambiente do projeto criando um arquivo .env seguindo o [arquivo de exemplo para variáveis de ambiente](.env_exemplo)
 * **OBSERVAÇÃO**: A SECRET_KEY presente no exemplo é insegura e não deve ser utilizada em produção. Idealmente, você deve gerar uma nova SECRET_KEY e utilizar as variáveis de ambiente para mantê-la segura.
 * Uma alternativa ao uso de um banco local é o uso de um container Docker, disponível nesse projeto. Para utilizá-lo, execute:
 > docker-compose up -d
@@ -69,12 +69,37 @@ Nessa importação, também é criado um superusuário com as seguintes credenci
 - password='admin'
 
 ## Funcionamento
-Como mencionado anteriormente, todos os endpoints estão documentados no Swagger. Para acessá-los, basta iniciar o projeto e acessar o link http://localhost:8000.
-Para utilizar a API, é necessário realizar a autenticação. Siga os passos abaixo para isso:
+O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui estão todos os endpoints disponíveis. Para mais detalhes, acesse a documentação disponível em http://localhost:8000.
+
+### Employees
+- GET /api/v1/employees/ - Listar todos os funcionários ativos.
+- POST /api/v1/employees/ - Criar um novo funcionário.
+- GET /api/v1/employees/{id}/ - Detalhes de um funcionário específico.
+- PUT /api/v1/employees/{id}/ - Atualizar um funcionário.
+- PATCH /api/v1/employees/{id}/ - Atualização parcial de um funcionário.
+- DELETE /api/v1/employees/{id}/ - Deletar (inativar) um funcionário.
+### Departments
+- GET /api/v1/departments/ - Listar todos os departamentos ativos.
+- POST /api/v1/departments/ - Criar um novo departamento.
+- GET /api/v1/departments/{id}/ - Detalhes de um departamento específico.
+- PUT /api/v1/departments/{id}/ - Atualizar um departamento.
+- PATCH /api/v1/departments/{id}/ - Atualização parcial de um departamento.
+- DELETE /api/v1/departments/{id}/ - Deletar (inativar) um departamento.
+### Companies
+- GET /api/v1/companies/ - Listar todas as empresas ativas.
+- POST /api/v1/companies/ - Criar uma nova empresa.
+- GET /api/v1/companies/{id}/ - Detalhes de uma empresa específica.
+- PUT /api/v1/companies/{id}/ - Atualizar uma empresa.
+- PATCH /api/v1/companies/{id}/ - Atualização parcial de uma empresa.
+- DELETE /api/v1/companies/{id}/ - Deletar (inativar) uma empresa.
+### Authentication
+- POST /api/v1/register/ - Registrar um novo usuário.
+- POST /api/v1/token/ - Obter par de tokens JWT para autenticação.
+- POST /api/v1/token/refresh/ - Renovar o token de acesso JWT.
 
 ### Autenticação
 
-- A autenticação ocorre em duas etapas. A primeira é a criação de uma conta via email e senha.
+- A autenticação ocorre em duas etapas. A primeira é a criação de uma conta via email e senha. Essa senha deve ter pelo menos 8 caracteres, sendo alfanumérica com pelo menos 1 caractere especial.
 - A segunda etapa é utilizar o email criado para gerar um token JWT, que será utilizado para autenticar o usuário nas requisições.
 - Para ter acesso a segunda etapa, é preciso que um administrador do sistema ative a sua conta. Atualmente, há 2 maneiras de fazer isso:
 1. Via Django ADMIN:
