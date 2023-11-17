@@ -1,4 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend, filters
+from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, permissions
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -23,7 +24,50 @@ class DepartmentViewSet(viewsets.ModelViewSet):
             return DepartmentSerializer
         return DepartmentWriteSerializer
 
-    @swagger_auto_schema(operation_summary="List all active departments")
+    @swagger_auto_schema(
+        operation_summary="List all active departments",
+        operation_description="Retrieve a paginated list of active departments filtered by name, company name, or other attributes. "
+                              "Use the search parameter to perform a text search across multiple department-related fields.",
+        manual_parameters=[
+            openapi.Parameter(
+                'name',
+                in_=openapi.IN_QUERY,
+                description="Search for departments by name. Supports partial, case-insensitive matches. "
+                            "E.g., 'fin' will match 'Finance'.",
+                type=openapi.TYPE_STRING,
+                example="Sales"
+            ),
+            openapi.Parameter(
+                'company_name',
+                in_=openapi.IN_QUERY,
+                description="Search for departments by the exact name of their associated company, case-insensitive. "
+                            "E.g., 'Acme Corp' must be provided in full.",
+                type=openapi.TYPE_STRING,
+                example="Tour House"
+            ),
+            openapi.Parameter(
+                'cost_center',
+                in_=openapi.IN_QUERY,
+                description="Filter departments by cost center identifier.",
+                type=openapi.TYPE_STRING,
+                example="CC001"
+            ),
+            openapi.Parameter(
+                'integration_code',
+                in_=openapi.IN_QUERY,
+                description="Filter departments by integration code.",
+                type=openapi.TYPE_STRING,
+                example="IC001"
+            ),
+            openapi.Parameter(
+                'search',
+                in_=openapi.IN_QUERY,
+                description="A general search filter that looks through all department fields for a match.",
+                type=openapi.TYPE_STRING,
+                example="Research"
+            )
+        ]
+    )
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
 

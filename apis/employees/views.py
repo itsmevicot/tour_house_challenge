@@ -1,3 +1,4 @@
+from drf_yasg import openapi
 from rest_framework import viewsets, permissions
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
@@ -23,7 +24,54 @@ class EmployeeViewSet(viewsets.ModelViewSet):
             return EmployeeSerializer
         return EmployeeWriteSerializer
 
-    @swagger_auto_schema(operation_summary="List all active employees")
+    @swagger_auto_schema(
+        operation_summary="List all active employees",
+        operation_description="Retrieve a paginated list of active employees filtered by various parameters. "
+                              "Use the search parameter to perform a text search across multiple fields.",
+        manual_parameters=[
+            openapi.Parameter(
+                'full_name',
+                in_=openapi.IN_QUERY,
+                description="Filter employees by full name, allowing partial, case-insensitive matches. "
+                            "For example, 'John' will match 'John Doe' and 'Johnny'.",
+                type=openapi.TYPE_STRING,
+                example="John"
+            ),
+            openapi.Parameter(
+                'company_name',
+                in_=openapi.IN_QUERY,
+                description="Filter employees by their company's name using a case-insensitive, exact match. "
+                            "For example, 'Tour House' must be provided in full.",
+                type=openapi.TYPE_STRING,
+                example="Tour House"
+            ),
+            openapi.Parameter(
+                'department',
+                in_=openapi.IN_QUERY,
+                description="Filter employees by their department's name using a case-insensitive, exact match. "
+                            "For example, 'Human Resources' will only match 'Human Resources'.",
+                type=openapi.TYPE_STRING,
+                example="Recursos Humanos"
+            ),
+            openapi.Parameter(
+                'city',
+                in_=openapi.IN_QUERY,
+                description="Filter employees by city. For example, searching for 'New York' will return employees "
+                            "located in New York.",
+                type=openapi.TYPE_STRING,
+                example="Império"
+            ),
+            openapi.Parameter(
+                'search',
+                in_=openapi.IN_QUERY,
+                description="A generic search term to look up employees, searching across fields like full name, "
+                            "email, department name, and city. For example, a search for 'developer' might return "
+                            "employees with 'developer' in their job title or department.",
+                type=openapi.TYPE_STRING,
+                example="developer"
+            ),
+        ]
+    )
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
 
