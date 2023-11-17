@@ -71,8 +71,10 @@ Nessa importação, também é criado um superusuário com as seguintes credenci
 ## Funcionamento
 O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui estão todos os endpoints disponíveis. Para mais detalhes, acesse a documentação disponível em http://localhost:8000.
 
-### Authentication
+### Register
 - POST /api/v1/register/ - Registrar um novo usuário.
+
+### Token
 - POST /api/v1/token/ - Obter par de tokens JWT para autenticação.
 - POST /api/v1/token/refresh/ - Renovar o token de acesso JWT.
 
@@ -98,7 +100,7 @@ O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui est�
 - PATCH /api/v1/companies/{id}/ - Atualização parcial de uma empresa.
 - DELETE /api/v1/companies/{id}/ - Deletar (inativar) uma empresa.
 
-### Autenticação
+## Autenticação
 
 - A autenticação ocorre em duas etapas. A primeira é a criação de uma conta via email e senha. Essa senha deve ter pelo menos 8 caracteres, sendo alfanumérica com pelo menos 1 caractere especial.
 - A segunda etapa é utilizar o email criado para gerar um token JWT, que será utilizado para autenticar o usuário nas requisições.
