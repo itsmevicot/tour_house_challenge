@@ -1,5 +1,5 @@
-from django.core.management import BaseCommand
-from django.core.management import call_command
+from django.core.management import BaseCommand, call_command
+from authentication.models import BaseUser
 
 
 class Command(BaseCommand):
@@ -7,7 +7,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         fixtures = ['companies.json', 'departments.json', 'employees.json']
-
         for fixture in fixtures:
             call_command('loaddata', fixture)
+
+        if not BaseUser.objects.filter(email='admin@admin.com').exists():
+            BaseUser.objects.create_superuser(
+                email='admin@admin.com',
+                password='admin'
+            )
+            print("Superuser created successfully!")
+
         print("Test data imported successfully!")
