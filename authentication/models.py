@@ -31,23 +31,3 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'Base User'
         verbose_name_plural = 'Base Users'
-
-
-class Consultant(BaseModel):
-    user = models.OneToOneField(
-        'authentication.BaseUser',
-        related_name='consultant',
-        on_delete=models.PROTECT,
-    )
-    historic = HistoricalRecords(
-        related_name='consultant_historic'
-    )
-    name = models.CharField(
-        max_length=255,
-        verbose_name='Name'
-    )
-
-    def __str__(self):
-        return f"{self.user.email}"
-
-#TODO: Refletir sobre a necessidade da model Consultant
