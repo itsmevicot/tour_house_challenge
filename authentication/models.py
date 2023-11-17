@@ -13,7 +13,7 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
         verbose_name='Email'
     )
     is_active = models.BooleanField(
-        default=True
+        default=False
     )
     is_superuser = models.BooleanField(
         default=False
