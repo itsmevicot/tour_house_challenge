@@ -1,5 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import OrderingFilter, SearchFilter
+
+from .filters import CompanyFilter
 from .models import Company
 from django_filters.rest_framework import DjangoFilterBackend
 from .serializers import CompanySerializer
@@ -10,8 +12,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.actives()
     serializer_class = CompanySerializer
     permission_classes = [permissions.IsAuthenticated]
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
-    filterset_fields = ['name', 'cnpj']
+    filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
+    search_fields = ['name', 'address', 'country']
+    filterset_class = CompanyFilter
     ordering_fields = ['name']
     ordering = ['name']
 
