@@ -71,6 +71,11 @@ Nessa importação, também é criado um superusuário com as seguintes credenci
 ## Funcionamento
 O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui estão todos os endpoints disponíveis. Para mais detalhes, acesse a documentação disponível em http://localhost:8000.
 
+### Authentication
+- POST /api/v1/register/ - Registrar um novo usuário.
+- POST /api/v1/token/ - Obter par de tokens JWT para autenticação.
+- POST /api/v1/token/refresh/ - Renovar o token de acesso JWT.
+
 ### Employees
 - GET /api/v1/employees/ - Listar todos os funcionários ativos.
 - POST /api/v1/employees/ - Criar um novo funcionário.
@@ -92,16 +97,12 @@ O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui est�
 - PUT /api/v1/companies/{id}/ - Atualizar uma empresa.
 - PATCH /api/v1/companies/{id}/ - Atualização parcial de uma empresa.
 - DELETE /api/v1/companies/{id}/ - Deletar (inativar) uma empresa.
-### Authentication
-- POST /api/v1/register/ - Registrar um novo usuário.
-- POST /api/v1/token/ - Obter par de tokens JWT para autenticação.
-- POST /api/v1/token/refresh/ - Renovar o token de acesso JWT.
 
 ### Autenticação
 
 - A autenticação ocorre em duas etapas. A primeira é a criação de uma conta via email e senha. Essa senha deve ter pelo menos 8 caracteres, sendo alfanumérica com pelo menos 1 caractere especial.
 - A segunda etapa é utilizar o email criado para gerar um token JWT, que será utilizado para autenticar o usuário nas requisições.
-- Para ter acesso a segunda etapa, é preciso que um administrador do sistema ative a sua conta. Atualmente, há 2 maneiras de fazer isso:
+- Para ter acesso a segunda etapa, é preciso que um administrador do sistema ative a sua conta. Atualmente, há 2 maneiras de fazer a ativação:
 1. Via Django ADMIN:
 - Crie uma conta de superusuário:
 > python manage.py createsuperuser
@@ -111,6 +112,10 @@ O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui est�
 2. Alternativamente:
 - Utilize o comando abaixo passando o email da conta que deseja ativar:
 > python manage.py activate_user [email]
+
+3. Criando conta de superusuário (opcional):
+- Para criar uma conta de superusuário, utilize o comando:
+> python manage.py createsuperuser
 
 - Após ter sua conta ativa, você precisa gerar um token de acesso (JWT) no endpoint 'api/v1/token/', passando o email e senha da conta criada.
 - 2 tokens serão gerados: 'access' e 'refresh'. O token 'access' é o que será utilizado para autenticar o usuário nas requisições. Já o token 'refresh' deve ser usado para gerar um novo token de acesso caso o seu token atual expire. Você poderá usá-lo durante 1 hora.
