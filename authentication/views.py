@@ -3,7 +3,7 @@ from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from .serializers import UserRegistrationSerializer
+from .serializers import UserRegistrationSerializer, CustomTokenObtainPairSerializer
 
 
 class UserRegistrationView(views.APIView):
@@ -17,6 +17,8 @@ class UserRegistrationView(views.APIView):
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+    
     @swagger_auto_schema(operation_summary="Obtain JWT Token")
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
