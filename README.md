@@ -146,3 +146,7 @@ Dentro da pasta [api_collection](api_collection), há 3 arquivos criados origina
 - JSON
 - YAML
 - HAR (HTTP Archive)
+
+Recomenda-se o uso do Insomnia devido a criação de um ambiente privado já configurado para adquirir o token, além de ter uma URL base definida.
+Se você optou por importar os dados de teste, basta importar a collection e executar o endpoint 'api/v1/token/' uma vez. O token será salvo no ambiente e poderá ser utilizado em todos os endpoints.
+Caso contrário, você precisará criar uma conta, ativá-la e gerar um token de acesso para utilizá-lo nos endpoints ou configurar o ambiente manualmente, como mostrado [aqui](https://www.ankursheel.com/blog/automatically-set-access-token-authenticated-requests-insomnia).
