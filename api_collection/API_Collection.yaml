@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-11-17T21:41:50.506Z
+__export_date: 2023-11-18T00:52:20.746Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
   - _id: req_bc9d6b8d3f0d44f6a0ddf477e0782740
@@ -64,7 +64,7 @@ resources:
     _type: workspace
   - _id: req_657080e9278d425c914bf9de92816e82
     parentId: fld_89cf6d3161ff4d568f8edbab0147e6f4
-    modified: 1700100226133
+    modified: 1700268674500
     created: 1700096577602
     url: "{{base_url}}/token/"
     name: Obtain Access and Refresh Token
@@ -74,8 +74,8 @@ resources:
       mimeType: application/json
       text: |-
         {
-          "email": "teste@teste.com",
-          "password": "teste"
+          "email": "admin@admin.com",
+          "password": "admin"
         }
     parameters: []
     headers:
