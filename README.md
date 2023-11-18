@@ -51,20 +51,20 @@ Este projeto foi desenvolvido para o desafio técnico da Tour House. Ele visa ge
 
 7. Migrando o projeto:
 
-Com o banco configurado, aplique as migrações do projeto:
+* Com o banco configurado, aplique as migrações do projeto:
     > python manage.py migrate
 
-Para iniciar o projeto, utilize o seguinte comando:
+* Para iniciar o projeto, utilize o seguinte comando:
     > python manage.py runserver
 
-A documentação gerada via [Swagger](https://swagger.io/) está disponível em:
+* A documentação gerada via [Swagger](https://swagger.io/) está disponível em:
     > http://localhost:8000
 
 ### Dados de teste
-É possível carregar dados de teste para alimentar o banco de dados através de fixtures. Para isso, um comando que importa esses dados foi criado. Para executá-lo, utilize:
+* É possível carregar dados de teste para alimentar o banco de dados através de fixtures. Para isso, um comando que importa esses dados foi criado. Para executá-lo, utilize:
     > python manage.py load_test_data
 
-Nessa importação, também é criado um superusuário com as seguintes credenciais:
+* Nessa importação, também é criado um superusuário com as seguintes credenciais:
 - email='admin@admin.com' 
 - password='admin'
 
@@ -106,18 +106,14 @@ O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui est�
 - A segunda etapa é utilizar o email criado para gerar um token JWT, que será utilizado para autenticar o usuário nas requisições.
 - Para ter acesso a segunda etapa, é preciso que um administrador do sistema ative a sua conta. Atualmente, há 2 maneiras de fazer a ativação:
 1. Via Django ADMIN:
-- Crie uma conta de superusuário:
+* Crie uma conta de superusuário:
     > python manage.py createsuperuser
-- Acesse localhost:8000/admin e faça o login com a conta criada.
-- Acesse a página de usuários e ative a conta do usuário criado.
+* Acesse localhost:8000/admin e faça o login com a conta criada.
+* Acesse a página de usuários e ative a conta do usuário criado.
 
 2. Alternativamente:
-- Utilize o comando abaixo passando o email da conta que deseja ativar:
+* Utilize o comando abaixo passando o email da conta que deseja ativar:
     > python manage.py activate_user [email]
-
-3. Criando conta de superusuário (opcional):
-- Para criar uma conta de superusuário, utilize o comando:
-    > python manage.py createsuperuser
 
 - Após ter sua conta ativa, você precisa gerar um token de acesso (JWT) no endpoint 'api/v1/token/', passando o email e senha da conta criada.
 - 2 tokens serão gerados: 'access' e 'refresh'. O token 'access' é o que será utilizado para autenticar o usuário nas requisições. Já o token 'refresh' deve ser usado para gerar um novo token de acesso caso o seu token atual expire. Você poderá usá-lo durante 1 hora.
@@ -130,13 +126,13 @@ O tópico a seguir descreve o funcionamento da API e como utilizá-la. Aqui est�
 
 Foram realizados testes unitários para cada API. Foram feitos testes de: criação, listagem, atualização, atualização parcial, remoção e recuperação por id de cada entidade.
 
-Para executar os testes, utilize o comando:
+* Para executar os testes, utilize o comando:
     > python manage.py test
 
-Se preferir executar os testes de forma individual:
+* Se preferir executar os testes de forma individual:
     > python manage.py test [nome do diretório]/[nome do app]
 
-Exemplo:
+* Exemplo:
     > python manage.py test apis/employees
 
 
