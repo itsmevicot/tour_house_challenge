@@ -23,7 +23,8 @@ class CompanyAPITestCase(APITestCase):
             name="Test Company",
             cnpj="00.000.000/0000-00",
             address="Test Address",
-            country="Test Country"
+            country="Test Country",
+            city="Test City"
         )
 
     def test_create_company(self):
@@ -35,7 +36,8 @@ class CompanyAPITestCase(APITestCase):
             "name": "New Company",
             "cnpj": "39.242.215/0001-54",
             "address": "New Address",
-            "country": "New Country"
+            "country": "New Country",
+            "city": "New City"
         }
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -71,7 +73,8 @@ class CompanyAPITestCase(APITestCase):
             "name": "Updated Company",
             "cnpj": "70.064.478/0001-60",
             "address": "Updated Address",
-            "country": "Updated Country"
+            "country": "Updated Country",
+            "city": "Updated City"
         }
         response = self.client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -97,7 +100,8 @@ class CompanyAPITestCase(APITestCase):
             name="Original Company",
             cnpj="60.735.776/0001-81",
             address="Original Address",
-            country="Original Country"
+            country="Original Country",
+            city="Original City"
         )
         url = reverse('companies:company-detail', kwargs={'pk': company.id})
         response = self.client.delete(url)

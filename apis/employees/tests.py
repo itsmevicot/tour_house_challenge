@@ -28,7 +28,8 @@ class EmployeeAPITestCase(APITestCase):
             name="Test Company",
             cnpj="00.000.000/0000-00",
             address="Test Address",
-            country="Test Country"
+            country="Test Country",
+            city="Test City"
         )
 
         # Create a test department

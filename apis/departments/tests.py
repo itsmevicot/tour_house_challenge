@@ -24,7 +24,8 @@ class DepartmentAPITestCase(APITestCase):
             name="Test Company",
             cnpj="61.658.755/0001-72",
             address="Test Address",
-            country="Test Country"
+            country="Test Country",
+            city="Test City"
         )
         # Create a test department
         self.department = Department.objects.create(

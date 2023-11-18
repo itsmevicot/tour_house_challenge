@@ -16,6 +16,9 @@ class Company(BaseModel):
     country = models.CharField(
         max_length=100
     )
+    city = models.CharField(
+        max_length=100
+    )
 
     class Meta:
         verbose_name = 'Company'

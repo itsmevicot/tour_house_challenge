@@ -13,9 +13,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
     serializer_class = CompanySerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    search_fields = ['name', 'address', 'country', 'cnpj']
+    search_fields = ['name', 'address', 'country', 'cnpj', 'city']
     filterset_class = CompanyFilter
-    ordering_fields = ['name', 'address', 'country']
+    ordering_fields = ['name', 'address', 'country', 'city']
     ordering = ['id']
 
     @swagger_auto_schema(
