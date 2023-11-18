@@ -59,6 +59,13 @@ class CompanyViewSet(viewsets.ModelViewSet):
                             " address, and country.",
                 type=openapi.TYPE_STRING,
                 example="Rua"
+            ),
+            openapi.Parameter(
+                'city',
+                openapi.IN_QUERY,
+                description="Filter companies by exact city, case-insensitive. E.g., 'São Paulo'.",
+                type=openapi.TYPE_STRING,
+                example="São Paulo"
             )
         ]
     )
