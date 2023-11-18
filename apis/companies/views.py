@@ -12,11 +12,11 @@ class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.actives()
     serializer_class = CompanySerializer
     permission_classes = [permissions.IsAuthenticated]
-    filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
-    search_fields = ['name', 'address', 'country']
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    search_fields = ['name', 'address', 'country', 'cnpj']
     filterset_class = CompanyFilter
-    ordering_fields = ['name']
-    ordering = ['name']
+    ordering_fields = ['name', 'address', 'country']
+    ordering = ['id']
 
     @swagger_auto_schema(
         operation_summary="List all active companies",

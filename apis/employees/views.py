@@ -14,10 +14,10 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     serializer_class = EmployeeSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
-    search_fields = ['full_name', 'email', 'department__name', 'city']
+    search_fields = ['full_name', 'email', 'department__name', 'city', 'phone_number', ]
     filterset_class = EmployeeFilter
     ordering_fields = ['full_name', 'email', 'department', 'city']
-    ordering = ['full_name']
+    ordering = ['id']
 
     def get_serializer_class(self):
         if self.action in ['list', 'retrieve']:

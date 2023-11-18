@@ -14,10 +14,10 @@ class DepartmentViewSet(viewsets.ModelViewSet):
     serializer_class = DepartmentSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
-    search_fields = ['name', 'company__name']
+    search_fields = ['name', 'company__name', 'cost_center', 'integration_code']
     filterset_class = DepartmentFilter
-    ordering_fields = ['name']
-    ordering = ['name']
+    ordering_fields = ['name', 'company__name', 'cost_center', 'integration_code']
+    ordering = ['id']
 
     def get_serializer_class(self):
         if self.action in ['list', 'retrieve']:
